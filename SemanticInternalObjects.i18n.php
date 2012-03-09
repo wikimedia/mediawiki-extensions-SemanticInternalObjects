@@ -336,9 +336,11 @@ $messages['sl'] = array(
 
 /** Swedish (Svenska)
  * @author Per
+ * @author Rotsee
  */
 $messages['sv'] = array(
 	'semanticinternalobjects-desc' => 'Inställning för interna objekt i Semantic MediaWiki',
+	'semanticinternalobjects-internalproperty' => 'Intern egenskap',
 );
 
 /** Tagalog (Tagalog)
