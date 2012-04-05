@@ -203,10 +203,12 @@ $messages['id'] = array(
 );
 
 /** Italian (Italiano)
+ * @author Beta16
  * @author Gianfranco
  */
 $messages['it'] = array(
 	'semanticinternalobjects-desc' => 'Configurazione degli oggetti interni in Semantic MediaWiki',
+	'semanticinternalobjects-internalproperty' => 'Proprietà interna',
 );
 
 /** Japanese (日本語)
