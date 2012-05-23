@@ -24,6 +24,7 @@ $magicWords['arz'] = array(
 /** German (Deutsch) */
 $magicWords['de'] = array(
 	'set_internal' => array( 0, 'setze_intern' ),
+	'set_internal_recurring_event' => array( 0, 'setze_interne_wiederholung' ),
 );
 
 /** Japanese (日本語) */
@@ -33,12 +34,14 @@ $magicWords['ja'] = array(
 
 /** Macedonian (Македонски) */
 $magicWords['mk'] = array(
-	'set_internal' => array( 0, 'задај_внатрешни' ),
+	'set_internal' => array( 0, 'задај_внатрешен' ),
+	'set_internal_recurring_event' => array( 0, 'задај_внатрешен_повторлив_настан' ),
 );
 
 /** Dutch (Nederlands) */
 $magicWords['nl'] = array(
 	'set_internal' => array( 0, 'intern_instellen' ),
+	'set_internal_recurring_event' => array( 0, 'intern_terugkerend_evenement_instellen' ),
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬) */
