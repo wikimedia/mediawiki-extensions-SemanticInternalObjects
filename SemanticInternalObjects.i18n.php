@@ -301,9 +301,11 @@ $messages['pt'] = array(
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
+ * @author Jaideraf
  */
 $messages['pt-br'] = array(
 	'semanticinternalobjects-desc' => 'Definição de objetos internos no Semantic MediaWiki',
+	'semanticinternalobjects-internalproperty' => 'Propriedade interna',
 );
 
 /** Tarandíne (Tarandíne)
