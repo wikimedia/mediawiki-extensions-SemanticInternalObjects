@@ -299,7 +299,7 @@ $messages['pt'] = array(
 	'semanticinternalobjects-desc' => 'Configuração de objetos internos no MediaWiki Semântico',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author Eduardo.mps
  * @author Jaideraf
  */
