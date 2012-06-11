@@ -32,7 +32,13 @@ $magicWords['ja'] = array(
 	'set_internal' => array( 0, '内部設定' ),
 );
 
-/** Macedonian (Македонски) */
+/** Korean (한국어) */
+$magicWords['ko'] = array(
+	'set_internal' => array( 0, '내부_설정' ),
+	'set_internal_recurring_event' => array( 0, '내부_반복_일정_설정' ),
+);
+
+/** Macedonian (македонски) */
 $magicWords['mk'] = array(
 	'set_internal' => array( 0, 'задај_внатрешен' ),
 	'set_internal_recurring_event' => array( 0, 'задај_внатрешен_повторлив_настан' ),
@@ -44,7 +50,7 @@ $magicWords['nl'] = array(
 	'set_internal_recurring_event' => array( 0, 'intern_terugkerend_evenement_instellen' ),
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+/** Serbian (Latin script) (‪srpski (latinica)‬) */
 $magicWords['sr-el'] = array(
 	'set_internal' => array( 0, 'postavi_unutrašnje' ),
 );
