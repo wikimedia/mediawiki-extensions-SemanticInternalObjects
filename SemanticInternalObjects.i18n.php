@@ -40,7 +40,7 @@ $messages['ar'] = array(
 	'semanticinternalobjects-desc' => 'ضبط الأشياء الداخلية في ميدياويكي الدلالي',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Xuacu
  */
 $messages['ast'] = array(
@@ -56,7 +56,7 @@ $messages['be-tarask'] = array(
 	'semanticinternalobjects-desc' => "Налады ўнутраных аб'ектаў у Semantic MediaWiki",
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  */
 $messages['br'] = array(
@@ -64,14 +64,14 @@ $messages['br'] = array(
 	'semanticinternalobjects-internalproperty' => 'Perzh diabarzh',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
 	'semanticinternalobjects-desc' => 'Postavljanje unutrašnjih objekata u Semantic MediaWiki',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Toniher
  */
 $messages['ca'] = array(
@@ -103,7 +103,7 @@ $messages['el'] = array(
 	'semanticinternalobjects-desc' => 'Ρυθμίσεις εσωτερικών αντικειμένων στη Σημασιολογική MediaWiki',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  * @author Crazymadlover
  */
@@ -112,7 +112,7 @@ $messages['es'] = array(
 	'semanticinternalobjects-internalproperty' => 'Propiedad interna',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Centerlink
  * @author Crt
  */
@@ -120,7 +120,7 @@ $messages['fi'] = array(
 	'semanticinternalobjects-desc' => 'Sisäisten objektien asetukset semanttisessa MediaWikissä.',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author Gomoko
  */
@@ -129,7 +129,7 @@ $messages['fr'] = array(
 	'semanticinternalobjects-internalproperty' => 'Propriété interne',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -178,7 +178,7 @@ $messages['hsb'] = array(
 	'semanticinternalobjects-internalproperty' => 'Interna kajkosć',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dj
  * @author Glanthor Reviol
  */
@@ -187,7 +187,7 @@ $messages['hu'] = array(
 	'semanticinternalobjects-internalproperty' => 'Belső tulajdonság',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -202,7 +202,7 @@ $messages['id'] = array(
 	'semanticinternalobjects-desc' => 'Seting untuk objek internal pada Semantic MediaWiki',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  * @author Gianfranco
  */
@@ -234,7 +234,7 @@ $messages['lb'] = array(
 	'semanticinternalobjects-internalproperty' => 'Intern Eegeschaft',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -267,14 +267,14 @@ $messages['nl'] = array(
 	'semanticinternalobjects-internalproperty' => 'Interne eigenschap',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
 	'semanticinternalobjects-desc' => 'Reglatge dels objèctes intèrnes dins Semantic MediaWiki',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  * @author Sp5uhe
  */
@@ -291,7 +291,7 @@ $messages['pms'] = array(
 	'semanticinternalobjects-internalproperty' => 'Proprietà anterna',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Hamilton Abreu
  * @author Indech
  */
@@ -308,28 +308,28 @@ $messages['pt-br'] = array(
 	'semanticinternalobjects-internalproperty' => 'Propriedade interna',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
 	'semanticinternalobjects-desc' => "'Mboste le oggette inderne jndr'à MediaUicchi Semandiche",
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'semanticinternalobjects-desc' => 'Установка внутренних объектов в Semantic MediaWiki',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  */
 $messages['sk'] = array(
 	'semanticinternalobjects-desc' => 'Nastavenie vnútorných objektov v Semantic MediaWiki',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  * @author Lesko987
  */
@@ -338,7 +338,7 @@ $messages['sl'] = array(
 	'semanticinternalobjects-internalproperty' => 'Notranja lastnina',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Per
  * @author Rotsee
  */
@@ -368,7 +368,7 @@ $messages['vi'] = array(
 	'semanticinternalobjects-desc' => 'Thiết kế các đối tượng nội bộ trong Semantic MediaWiki',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Liangent
  * @author Linforest
  */
@@ -377,7 +377,7 @@ $messages['zh-hans'] = array(
 	'semanticinternalobjects-internalproperty' => '内部属性',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬) */
+/** Traditional Chinese (‪中文（繁體）‬) */
 $messages['zh-hant'] = array(
 	'semanticinternalobjects-desc' => '在語義MediaWiki中設置內部對象',
 );
