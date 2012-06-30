@@ -14,6 +14,7 @@ $magicWords['en'] = array(
 /** Arabic (العربية) */
 $magicWords['ar'] = array(
 	'set_internal' => array( 0, 'ضبط_داخلي' ),
+	'set_internal_recurring_event' => array( 0, 'ضبط_حدث_داخلي_متكرر' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
