@@ -48,7 +48,7 @@ $messages['ast'] = array(
 	'semanticinternalobjects-internalproperty' => 'Propiedá interna',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Zedlik
  */
@@ -88,7 +88,7 @@ $messages['de'] = array(
 	'semanticinternalobjects-internalproperty' => 'Internes Attribut',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -136,7 +136,7 @@ $messages['frp'] = array(
 	'semanticinternalobjects-internalproperty' => 'Propriètât de dedens',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -170,7 +170,7 @@ $messages['hil'] = array(
 	'semanticinternalobjects-desc' => 'Pagplastar sang internal na mga bagay sa Semantik MedyaWiki',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
