@@ -352,6 +352,7 @@ $messages['sv'] = array(
  */
 $messages['tl'] = array(
 	'semanticinternalobjects-desc' => 'Pagtatakda ng panloob na mga bagay sa Semantic MediaWiki',
+	'semanticinternalobjects-internalproperty' => 'Panloob ng ari-arian',
 );
 
 /** Turkish (Türkçe)
