@@ -250,7 +250,7 @@ $messages['ms'] = array(
 	'semanticinternalobjects-internalproperty' => 'Harta dalaman',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Event
  * @author Nghtwlkr
  */
