@@ -170,7 +170,13 @@ class SIOSQLStore extends SMWSQLStore2 {
 					'value_blob' => $key
 				);
 			} elseif ( $isCoords ) {
-				$keys = $value->getDBkeys();
+				if ( class_exists( 'SMWCompatibilityHelpers' ) ) {
+					// SMW 1.6
+					$dataItem = $value->getDataItem();
+					$keys = SMWCompatibilityHelpers::getDBkeysFromDataItem( $dataItem );
+				} else {
+					$keys = $value->getDBkeys();
+				}
 				$upCoords[] = array(
 					's_id' => $ioID,
 					'p_id' => $this->makeSMWPropertyID( $property ),
