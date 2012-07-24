@@ -70,7 +70,7 @@ class SIOPageSchemas extends PSExtensionHandler {
 				$hasExistingValues = true;
 			}
 		}
-		$text = '<p>' . 'Name of property to connect this template\'s fields to the rest of the page (should only be used if this template can have multiple instances):' . ' ';
+		$text = '<p>' . wfMsg( 'semanticinternalobjects-mainpropertyname' ) . ' ' . wfMsg( 'semanticinternalobjects-propnamewarning' ) . ' ';
 		$propName = PageSchemas::getValueFromObject( $prop_array, 'name' );
 		$text .= Html::input( 'sio_property_name_num', $propName, array( 'size' => 15 ) ) . "\n";
 

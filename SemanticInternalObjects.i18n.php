@@ -16,6 +16,8 @@ $messages = array();
 $messages['en'] = array(
 	'semanticinternalobjects-desc' => 'Setting of internal objects in Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Internal property',
+	'semanticinternalobjects-mainpropertyname' => 'Name of property to connect this template\'s fields to the rest of the page:',
+	'semanticinternalobjects-propnamewarning' => '(should only be used if this template can have multiple instances)',
 );
 
 /** Message documentation (Message documentation)
