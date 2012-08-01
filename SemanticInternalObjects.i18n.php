@@ -84,10 +84,13 @@ $messages['ca'] = array(
 /** German (Deutsch)
  * @author Imre
  * @author Kghbln
+ * @author Metalhead64
  */
 $messages['de'] = array(
 	'semanticinternalobjects-desc' => 'Ermöglicht das Definieren interner semantischer Datenobjekte',
 	'semanticinternalobjects-internalproperty' => 'Internes Attribut',
+	'semanticinternalobjects-mainpropertyname' => 'Name des Attributs, um die Felder dieser Vorlage zum Rest der Seite zu verbinden:',
+	'semanticinternalobjects-propnamewarning' => '(sollte nur verwendet werden, wenn diese Vorlage mehrere Instanzen haben kann)',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -355,6 +358,8 @@ $messages['sv'] = array(
 $messages['tl'] = array(
 	'semanticinternalobjects-desc' => 'Pagtatakda ng panloob na mga bagay sa Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Panloob ng ari-arian',
+	'semanticinternalobjects-mainpropertyname' => 'Pangalan ng ari-arian na pagkakabitan ng mga kahanayan ng suleras na ito papunta sa iba pang mga bahagi ng pahina:',
+	'semanticinternalobjects-propnamewarning' => '(dapat na gamitin lamang kung ang suleras na ito ay maaaring magkaroon ng maramihang mga pagkakataon)',
 );
 
 /** Turkish (Türkçe)
