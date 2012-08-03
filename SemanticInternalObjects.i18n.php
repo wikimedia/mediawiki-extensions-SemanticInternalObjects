@@ -147,6 +147,8 @@ $messages['frp'] = array(
 $messages['gl'] = array(
 	'semanticinternalobjects-desc' => 'Configuracións de obxectos internos en Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Propiedade interna',
+	'semanticinternalobjects-mainpropertyname' => 'Nome da propiedade para conectar os campos deste modelo co resto da páxina:',
+	'semanticinternalobjects-propnamewarning' => '(debería empregarse unicamente se este modelo pode ter numerosas instancias)',
 );
 
 /** Swiss German (Alemannisch)
@@ -181,6 +183,8 @@ $messages['hil'] = array(
 $messages['hsb'] = array(
 	'semanticinternalobjects-desc' => 'Nastajenje internych objektow w Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Interna kajkosć',
+	'semanticinternalobjects-mainpropertyname' => 'Mjeno kajkosće, zo by pola tuteje předłohi ze zbytkom strony zwjazało:',
+	'semanticinternalobjects-propnamewarning' => '(měł so jenož wužiwać, jeli tuta předłoha móže wjacore instancy měć)',
 );
 
 /** Hungarian (magyar)
@@ -245,6 +249,8 @@ $messages['lb'] = array(
 $messages['mk'] = array(
 	'semanticinternalobjects-desc' => 'Задавање на внатрешни објекти во Семантички МедијаВики',
 	'semanticinternalobjects-internalproperty' => 'Внатрешно својство',
+	'semanticinternalobjects-mainpropertyname' => 'Име на својството што треба да ги поврзе полињата на овој шаблон со остатокот од страницата:',
+	'semanticinternalobjects-propnamewarning' => '(треба да се користи само ако шаблонов може да има повеќе примероци)',
 );
 
 /** Malay (Bahasa Melayu)
