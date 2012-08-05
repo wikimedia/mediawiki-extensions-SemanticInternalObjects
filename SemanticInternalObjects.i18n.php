@@ -90,7 +90,7 @@ $messages['de'] = array(
 	'semanticinternalobjects-desc' => 'Ermöglicht das Definieren interner semantischer Datenobjekte',
 	'semanticinternalobjects-internalproperty' => 'Internes Attribut',
 	'semanticinternalobjects-mainpropertyname' => 'Name des Attributs, um die Felder dieser Vorlage zum Rest der Seite zu verbinden:',
-	'semanticinternalobjects-propnamewarning' => '(sollte nur verwendet werden, wenn diese Vorlage mehrere Instanzen haben kann)',
+	'semanticinternalobjects-propnamewarning' => '(sollte nur verwendet werden, sofern diese Vorlage mehrere Instanzen haben kann)',
 );
 
 /** Lower Sorbian (dolnoserbski)
