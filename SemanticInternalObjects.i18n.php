@@ -126,12 +126,15 @@ $messages['fi'] = array(
 );
 
 /** French (français)
+ * @author Brunoperel
  * @author Crochet.david
  * @author Gomoko
  */
 $messages['fr'] = array(
 	'semanticinternalobjects-desc' => 'Réglage des objets internes dans Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Propriété interne',
+	'semanticinternalobjects-mainpropertyname' => 'Nom de propriété pour connecter les champs de ce modèle pour le reste de la page :',
+	'semanticinternalobjects-propnamewarning' => '(doit être utilisé uniquement si ce modèle peut avoir plusieurs instances)',
 );
 
 /** Franco-Provençal (arpetan)
