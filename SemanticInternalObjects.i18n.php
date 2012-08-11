@@ -216,11 +216,14 @@ $messages['id'] = array(
 
 /** Italian (italiano)
  * @author Beta16
+ * @author Darth Kule
  * @author Gianfranco
  */
 $messages['it'] = array(
 	'semanticinternalobjects-desc' => 'Configurazione degli oggetti interni in Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Proprietà interna',
+	'semanticinternalobjects-mainpropertyname' => 'Nome della proprietà per collegare i campi di questo modello al resto della pagina:',
+	'semanticinternalobjects-propnamewarning' => '(deve essere utilizzato solo se questo modello può avere più istanze)',
 );
 
 /** Japanese (日本語)
