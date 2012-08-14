@@ -264,7 +264,9 @@ $messages['mk'] = array(
  */
 $messages['ms'] = array(
 	'semanticinternalobjects-desc' => 'Penetapan objek dalaman di Semantic MediaWiki',
-	'semanticinternalobjects-internalproperty' => 'Harta dalaman',
+	'semanticinternalobjects-internalproperty' => 'Sifat dalaman',
+	'semanticinternalobjects-mainpropertyname' => 'Nama sifat untuk menyambungkan medan-medan templat ini dengan seluruh halaman:',
+	'semanticinternalobjects-propnamewarning' => '(hanya boleh digunakan jika templat ini boleh mempunyai berbilang tika)',
 );
 
 /** Norwegian Bokmål (‪norsk (bokmål)‬)
