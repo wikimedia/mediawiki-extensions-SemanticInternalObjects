@@ -99,6 +99,8 @@ $messages['de'] = array(
 $messages['dsb'] = array(
 	'semanticinternalobjects-desc' => 'Nastajenje internych objektow w Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Interna kakosć',
+	'semanticinternalobjects-mainpropertyname' => 'Mě kakosći, aby póla toś teje pśedłogi ze zbytkom boka zwězało:',
+	'semanticinternalobjects-propnamewarning' => '(měł se jano wužywaś, jolic toś ta pśedłoga móžo někotare instance měś)',
 );
 
 /** Greek (Ελληνικά)
@@ -228,9 +230,12 @@ $messages['it'] = array(
 
 /** Japanese (日本語)
  * @author Fryed-peach
+ * @author Shirayuki
  */
 $messages['ja'] = array(
 	'semanticinternalobjects-desc' => 'Semantic MediaWiki の内部オブジェクトの設定',
+	'semanticinternalobjects-internalproperty' => '内部プロパティ',
+	'semanticinternalobjects-propnamewarning' => '(このテンプレートが複数の実体を持つ可能性がある場合のみ使用すべきです)',
 );
 
 /** Colognian (Ripoarisch)
