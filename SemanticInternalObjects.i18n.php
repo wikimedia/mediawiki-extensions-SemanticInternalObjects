@@ -48,6 +48,8 @@ $messages['ar'] = array(
 $messages['ast'] = array(
 	'semanticinternalobjects-desc' => "Definición d'oxetos internos en Semantic MediaWiki",
 	'semanticinternalobjects-internalproperty' => 'Propiedá interna',
+	'semanticinternalobjects-mainpropertyname' => "Nome de la propiedá pa conectar los campos d'esta plantía col restu de la páxina:",
+	'semanticinternalobjects-propnamewarning' => "(namái tendría d'emplegase si esta plantía pue tener múltiples instancies)",
 );
 
 /** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
