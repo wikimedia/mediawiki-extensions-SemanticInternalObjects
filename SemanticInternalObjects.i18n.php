@@ -119,6 +119,8 @@ $messages['el'] = array(
 $messages['es'] = array(
 	'semanticinternalobjects-desc' => 'Configuración de objetos internos en Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Propiedad interna',
+	'semanticinternalobjects-mainpropertyname' => 'Nombre de la propiedad para conectar los campos de esta plantilla con el resto de la página:',
+	'semanticinternalobjects-propnamewarning' => '(debe ser utilizado únicamente si esta plantilla puede tener varias instancias)',
 );
 
 /** Finnish (suomi)
