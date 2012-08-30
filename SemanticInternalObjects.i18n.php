@@ -314,13 +314,14 @@ $messages['pl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
 	'semanticinternalobjects-desc' => "Ampostassion d'oget intern an drinta a Semantic MediaWiki",
 	'semanticinternalobjects-internalproperty' => 'Proprietà anterna',
-	'semanticinternalobjects-mainpropertyname' => 'Nòm ëd la propietà për coleghé sto camp dlë stamp a rest ëd la pagina:',
-	'semanticinternalobjects-propnamewarning' => '(a dovrìa mach esse dovrà se sto stamp a peul avèj istanse multiple)',
+	'semanticinternalobjects-mainpropertyname' => 'Nòm ëd la propietà për coleghé ij camp ëd së stamp për ël rest ëd la pàgina:',
+	'semanticinternalobjects-propnamewarning' => '(a dovrìa esse dovrà mach se së stamp a peul avèj vàire istanse)',
 );
 
 /** Portuguese (português)
