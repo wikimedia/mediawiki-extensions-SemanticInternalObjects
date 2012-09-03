@@ -401,7 +401,7 @@ $messages['tr'] = array(
  * @author Minh Nguyen
  */
 $messages['vi'] = array(
-	'semanticinternalobjects-desc' => 'Thiết kế các đối tượng nội bộ trong Semantic MediaWiki',
+	'semanticinternalobjects-desc' => 'Thiết kế các đối tượng nội bộ trong MediaWiki Ngữ nghĩa',
 );
 
 /** Simplified Chinese (‪中文（简体）‬)
