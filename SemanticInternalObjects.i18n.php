@@ -341,6 +341,8 @@ $messages['pt'] = array(
 $messages['pt-br'] = array(
 	'semanticinternalobjects-desc' => 'Definição de objetos internos no Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Propriedade interna',
+	'semanticinternalobjects-mainpropertyname' => 'Nome da propriedade utilizada para conectar os campos dessa predefinição com o resto da página:',
+	'semanticinternalobjects-propnamewarning' => '(só deve ser utilizado se essa predefinição puder ter várias instâncias na mesma página)',
 );
 
 /** tarandíne (tarandíne)
