@@ -313,6 +313,8 @@ $messages['oc'] = array(
 $messages['pl'] = array(
 	'semanticinternalobjects-desc' => 'Ustawianie wewnętrznych obiektów Semantic MediaWiki.',
 	'semanticinternalobjects-internalproperty' => 'Atrybut wewnętrzny',
+	'semanticinternalobjects-mainpropertyname' => 'Nazwa atrybutu łączącego pola szablonu z resztą strony:',
+	'semanticinternalobjects-propnamewarning' => '(należy używać tylko jeśli ten szablon może mieć wiele wystąpień)',
 );
 
 /** Piedmontese (Piemontèis)

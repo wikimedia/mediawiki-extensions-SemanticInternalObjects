@@ -51,7 +51,7 @@ $magicWords['nl'] = array(
 	'set_internal_recurring_event' => array( 0, 'intern_terugkerend_evenement_instellen' ),
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬) */
+/** Serbian (Latin script) (srpski (latinica)‎) */
 $magicWords['sr-el'] = array(
 	'set_internal' => array( 0, 'postavi_unutrašnje' ),
 );
