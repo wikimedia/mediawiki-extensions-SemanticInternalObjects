@@ -52,7 +52,7 @@ $messages['ast'] = array(
 	'semanticinternalobjects-propnamewarning' => "(namái tendría d'emplegase si esta plantía pue tener múltiples instancies)",
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Zedlik
  */
@@ -280,7 +280,7 @@ $messages['ms'] = array(
 	'semanticinternalobjects-propnamewarning' => '(hanya boleh digunakan jika templat ini boleh mempunyai berbilang tika)',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Event
  * @author Nghtwlkr
  */
@@ -410,7 +410,7 @@ $messages['vi'] = array(
 	'semanticinternalobjects-desc' => 'Thiết kế các đối tượng nội bộ trong MediaWiki Ngữ nghĩa',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Liangent
  * @author Linforest
  */
