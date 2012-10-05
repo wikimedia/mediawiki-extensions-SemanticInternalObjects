@@ -378,12 +378,15 @@ $messages['sl'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Martinwiss
  * @author Per
  * @author Rotsee
  */
 $messages['sv'] = array(
 	'semanticinternalobjects-desc' => 'Inställning för interna objekt i Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Intern egenskap',
+	'semanticinternalobjects-mainpropertyname' => 'Namnet på egenskapen som ansluter den här mallen indata-fält till resten av sidan:',
+	'semanticinternalobjects-propnamewarning' => '(ska endast användas om den här mallen kan ha flera versioner)',
 );
 
 /** Tagalog (Tagalog)
