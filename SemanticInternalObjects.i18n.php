@@ -242,6 +242,16 @@ $messages['ja'] = array(
 	'semanticinternalobjects-propnamewarning' => '(このテンプレートが複数の実体を持つ可能性がある場合のみ使用すべきです)',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'semanticinternalobjects-desc' => 'Semantic MediaWiki에 내부 개체 설정',
+	'semanticinternalobjects-internalproperty' => '내부 속성',
+	'semanticinternalobjects-mainpropertyname' => '문서의 나머지 부분에 틀의 필드를 연결하는 속성 이름:',
+	'semanticinternalobjects-propnamewarning' => '(이 틀이 여러 인스턴스를 가질 수 있을 때에만 사용해야 합니다)',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
