@@ -422,9 +422,9 @@ $messages['zh-hans'] = array(
 	'semanticinternalobjects-internalproperty' => '内部属性',
 );
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體）‎)
+ */
 $messages['zh-hant'] = array(
 	'semanticinternalobjects-desc' => '在語義MediaWiki中設置內部對象',
 	'semanticinternalobjects-internalproperty' => '內部屬性',
 );
-
