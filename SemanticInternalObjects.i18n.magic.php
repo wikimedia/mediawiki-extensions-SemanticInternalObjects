@@ -45,6 +45,11 @@ $magicWords['mk'] = array(
 	'set_internal_recurring_event' => array( 0, 'задај_внатрешен_повторлив_настан' ),
 );
 
+/** Malayalam (മലയാളം) */
+$magicWords['ml'] = array(
+	'set_internal' => array( 0, 'ഇടവേള_സജ്ജീകരിക്കുക' ),
+);
+
 /** Dutch (Nederlands) */
 $magicWords['nl'] = array(
 	'set_internal' => array( 0, 'intern_instellen' ),
