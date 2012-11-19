@@ -97,7 +97,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 	 */
 	function getStorageSQL( $internalObject ) {
 		if ( method_exists( 'SMWDIWikiPage', 'getSubobjectName' ) ) {
-			// SMW 1.6
+			// SMW 1.6+
 			$ioID = $this->makeSMWPageID( $internalObject->getName(), $internalObject->getNamespace(), '', '' );
 		} else {
 			$ioID = $this->makeSMWPageID( $internalObject->getName(), $internalObject->getNamespace(), '' );
@@ -118,7 +118,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 			
 			if ( $isRelation ) {
 				if ( method_exists( 'SMWDIWikiPage', 'getSubobjectName' ) ) {
-					// SMW 1.6
+					// SMW 1.6+
 					$mainPageID = $this->makeSMWPageID( $value->getDBkey(), $value->getNamespace(), $value->getInterwiki(), '' );
 				} else {
 					$mainPageID = $this->makeSMWPageID( $value->getDBkey(), $value->getNamespace(), $value->getInterwiki() );
@@ -130,7 +130,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 				);
 			} elseif ( $isAttribute ) {
 				if ( class_exists( 'SMWCompatibilityHelpers' ) ) {
-					// SMW 1.6
+					// SMW 1.6+
 					$dataItem = $value->getDataItem();
 					$keys = SMWCompatibilityHelpers::getDBkeysFromDataItem( $dataItem );
 					$valueNum = $dataItem->getSortKey();
@@ -158,7 +158,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 				$upAtts2[] = $upAttr;
 			} elseif ( $isText ) {
 				if ( method_exists( $value, 'getShortWikiText' ) ) {
-					// SMW 1.6
+					// SMW 1.6+
 					$key = $value->getShortWikiText();
 				} else {
 					$keys = $value->getDBkeys();
@@ -171,7 +171,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 				);
 			} elseif ( $isCoords ) {
 				if ( class_exists( 'SMWCompatibilityHelpers' ) ) {
-					// SMW 1.6
+					// SMW 1.6+
 					$dataItem = $value->getDataItem();
 					$keys = SMWCompatibilityHelpers::getDBkeysFromDataItem( $dataItem );
 				} else {
@@ -291,7 +291,7 @@ class SIOHandler {
 		$params = func_get_args();
 		array_shift( $params ); // we already know the $parser...
 		$internalObject = new SIOInternalObject( $title, $curObjectNum );
-		$objToPagePropName = array_shift( $params );
+		$objToPagePropName = ucfirst( array_shift( $params ) );
 		$internalObject->addPropertyAndValue( $objToPagePropName, self::$mCurPageFullName );
 		
 		foreach ( $params as $param ) {
@@ -319,7 +319,24 @@ class SIOHandler {
 	}
 
 	/**
-	 * Handle the #set_internal_recurring_event parser function.
+	 * Just calls SMW's own #subobject, which does essentially the
+	 * same thing but with a different syntax.
+	 */
+	public static function doSetInternalAsAlias( &$parser ) {
+		$origArgs = func_get_args();
+		// $parser is also $origArgs[0].
+		$subobjectArgs = array( &$parser );
+		$subobjectArgs[1] = '';
+		$subobjectArgs[2] = $origArgs[1] . '=' . $parser->getTitle()->getText();
+		for ( $i = 2; $i < count( $origArgs ); $i++ ) {
+			$subobjectArgs[] = $origArgs[$i];
+		}
+		call_user_func_array( array( 'SMWSubobject', 'render' ), $subobjectArgs );
+		return;
+	}
+
+	/**
+	 * Handles the #set_internal_recurring_event parser function.
 	 */
 	public static function doSetInternalRecurringEvent( &$parser ) {
 		$params = func_get_args();
@@ -334,7 +351,7 @@ class SIOHandler {
 		} else {
 			$results = SMWParserExtensions::getDatesForRecurringEvent( $params );
 		}
-		
+
 		if ( $results == null ) {
 			return null;
 		}
@@ -351,6 +368,44 @@ class SIOHandler {
 			
 			$cur_params = array_merge( $first_params, $unused_params );
 			call_user_func_array( 'SIOHandler::doSetInternal', $cur_params );
+		}
+	}
+
+	/**
+	 * Just calls SMW's own #subobject for each instance of this
+	 * recurring event.
+	 */
+	public static function doSetInternalRecurringEventAsAlias( &$parser ) {
+		$params = func_get_args();
+		array_shift( $params ); // We already know the $parser ...
+
+		// First param should be a standalone property name.
+		$objToPagePropName = array_shift( $params );
+
+		// The location of this function changed in SMW 1.5.3
+		if ( class_exists( 'SMWSetRecurringEvent' ) ) {
+			$results = SMWSetRecurringEvent::getDatesForRecurringEvent( $params );
+		} else {
+			$results = SMWParserExtensions::getDatesForRecurringEvent( $params );
+		}
+
+		if ( $results == null ) {
+			return null;
+		}
+
+		list( $property, $all_date_strings, $unused_params ) = $results;
+
+		// Mimic a call to #subobject for each date.
+		foreach ( $all_date_strings as $date_string ) {
+			$first_params = array(
+				&$parser,
+				'',
+				$parser->getTitle->getText() . '=' . $objToPagePropName,
+				"$property=$date_string"
+			);
+			
+			$cur_params = array_merge( $first_params, $unused_params );
+			call_user_func_array( array( 'SMWSubobject', 'render' ), $cur_params );
 		}
 	}
 
