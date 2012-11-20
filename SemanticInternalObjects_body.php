@@ -400,7 +400,7 @@ class SIOHandler {
 			$first_params = array(
 				&$parser,
 				'',
-				$parser->getTitle->getText() . '=' . $objToPagePropName,
+				$objToPagePropName . '=' . $parser->getTitle()->getText(),
 				"$property=$date_string"
 			);
 			
