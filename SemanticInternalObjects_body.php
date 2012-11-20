@@ -268,6 +268,8 @@ class SIOHandler {
 	 * Handle the #set_internal parser function.
 	 */
 	public static function doSetInternal( &$parser ) {
+		global $wgContLang;
+
 		$title = $parser->getTitle();
 		$mainPageFullName = $title->getText();
 		if ( ( $nsText = $title->getNsText() ) != '' ) {
@@ -291,7 +293,7 @@ class SIOHandler {
 		$params = func_get_args();
 		array_shift( $params ); // we already know the $parser...
 		$internalObject = new SIOInternalObject( $title, $curObjectNum );
-		$objToPagePropName = ucfirst( array_shift( $params ) );
+		$objToPagePropName = $wgContLang->ucfirst( array_shift( $params ) );
 		$internalObject->addPropertyAndValue( $objToPagePropName, self::$mCurPageFullName );
 		
 		foreach ( $params as $param ) {
@@ -300,8 +302,8 @@ class SIOHandler {
 			if ( count( $parts ) == 2 ) {
 				$key = trim( $parts[0] );
 				$value = trim( $parts[1] );
-				// if the property name ends with '#list', it's
-				// a comma-delimited group of values
+				// If the property name ends with '#list', it's
+				// a comma-delimited group of values.
 				if ( substr( $key, - 5 ) == '#list' ) {
 					$key = substr( $key, 0, strlen( $key ) - 5 );
 					$listValues = explode( ',', $value );
@@ -323,10 +325,18 @@ class SIOHandler {
 	 * same thing but with a different syntax.
 	 */
 	public static function doSetInternalAsAlias( &$parser ) {
+		// This is a hack, since SMW's SMWSubobject::render() call is
+		// not meant to be called outside of SMW. However, this seemed
+		// like the better solution than copying over all of that
+		// method's code. Ideally, a true public function can be
+		// added to SMW, that handles a subobject creation, that this
+		// code can then call.
+
 		$origArgs = func_get_args();
 		// $parser is also $origArgs[0].
 		$subobjectArgs = array( &$parser );
 		$subobjectArgs[1] = '';
+		// "main" property, pointing back to the page.
 		$subobjectArgs[2] = $origArgs[1] . '=' . $parser->getTitle()->getText();
 		for ( $i = 2; $i < count( $origArgs ); $i++ ) {
 			$subobjectArgs[] = $origArgs[$i];
@@ -345,12 +355,7 @@ class SIOHandler {
 		// First param should be a standalone property name.
 		$objToPagePropName = array_shift( $params );
 
-		// The location of this function changed in SMW 1.5.3
-		if ( class_exists( 'SMWSetRecurringEvent' ) ) {
-			$results = SMWSetRecurringEvent::getDatesForRecurringEvent( $params );
-		} else {
-			$results = SMWParserExtensions::getDatesForRecurringEvent( $params );
-		}
+		$results = SMWSetRecurringEvent::getDatesForRecurringEvent( $params );
 
 		if ( $results == null ) {
 			return null;
@@ -376,19 +381,15 @@ class SIOHandler {
 	 * recurring event.
 	 */
 	public static function doSetInternalRecurringEventAsAlias( &$parser ) {
+		// This is a hack, as is doSetInternalAsAlias() - see comments
+		// in that method.
 		$params = func_get_args();
 		array_shift( $params ); // We already know the $parser ...
 
 		// First param should be a standalone property name.
 		$objToPagePropName = array_shift( $params );
 
-		// The location of this function changed in SMW 1.5.3
-		if ( class_exists( 'SMWSetRecurringEvent' ) ) {
-			$results = SMWSetRecurringEvent::getDatesForRecurringEvent( $params );
-		} else {
-			$results = SMWParserExtensions::getDatesForRecurringEvent( $params );
-		}
-
+		$results = SMWSetRecurringEvent::getDatesForRecurringEvent( $params );
 		if ( $results == null ) {
 			return null;
 		}
@@ -446,7 +447,7 @@ class SIOHandler {
 			wfRunHooks( 'SIOHandler::updateData', array( $internalObject ) );
 		}
 
-		// now save everything to the database, in a single transaction
+		// Now save everything to the database, in a single transaction.
 		$db = wfGetDB( DB_MASTER );
 		$db->begin( 'SIO::updatePageData' );
 
