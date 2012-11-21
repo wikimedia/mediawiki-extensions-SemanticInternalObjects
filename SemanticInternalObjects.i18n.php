@@ -305,8 +305,8 @@ $messages['nb'] = array(
 $messages['nl'] = array(
 	'semanticinternalobjects-desc' => 'Interne objecten in Semantic MediaWiki instellen',
 	'semanticinternalobjects-internalproperty' => 'Interne eigenschap',
-	'semanticinternalobjects-mainpropertyname' => 'Naam van de eigenschap om de velden van dit sjabloon te koppelen met de rest van de pagina:',
-	'semanticinternalobjects-propnamewarning' => '(hoort alleen gebruikt te worden als dit sjabloon meerdere instanties kan hebben)',
+	'semanticinternalobjects-mainpropertyname' => 'Naam van de eigenschap om de velden van deze sjabloon te koppelen met de rest van de pagina:',
+	'semanticinternalobjects-propnamewarning' => '(hoort alleen gebruikt te worden als deze sjabloon meerdere instanties kan hebben)',
 );
 
 /** Occitan (occitan)
