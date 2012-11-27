@@ -126,9 +126,12 @@ $messages['es'] = array(
 /** Finnish (suomi)
  * @author Centerlink
  * @author Crt
+ * @author Nedergard
  */
 $messages['fi'] = array(
 	'semanticinternalobjects-desc' => 'Sisäisten objektien asetukset semanttisessa MediaWikissä.',
+	'semanticinternalobjects-internalproperty' => 'Sisäinen ominaisuus',
+	'semanticinternalobjects-mainpropertyname' => 'Ominaisuuden nimi, jotta tämän mallineen kentät voidaan yhdistää sivun muuhun sisältöön:',
 );
 
 /** French (français)
