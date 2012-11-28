@@ -132,6 +132,7 @@ $messages['fi'] = array(
 	'semanticinternalobjects-desc' => 'Sisäisten objektien asetukset semanttisessa MediaWikissä.',
 	'semanticinternalobjects-internalproperty' => 'Sisäinen ominaisuus',
 	'semanticinternalobjects-mainpropertyname' => 'Ominaisuuden nimi, jotta tämän mallineen kentät voidaan yhdistää sivun muuhun sisältöön:',
+	'semanticinternalobjects-propnamewarning' => '(käytetään vain, jos lomakkeella voi olla monia instansseja)',
 );
 
 /** French (français)
