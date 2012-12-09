@@ -39,7 +39,10 @@ class SIOInternalObject {
 	}
 
 	public function getName() {
-		return $this->mMainTitle->getDBkey() . '#' . $this->mIndex;
+		// Pad number to three digits, so that SMW's sorting (which
+		// treats the values as strings, not numbers) will work
+		// correctly.
+		return $this->mMainTitle->getDBkey() . '#' . sprintf( '%03d', $this->mIndex );
 	}
 
 	public function getNamespace() {
