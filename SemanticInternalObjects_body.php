@@ -346,10 +346,10 @@ class SIOHandler {
 		}
 		if ( class_exists( 'SMW\Subobject' ) ) {
 			// SMW 1.9+
-			call_user_func_array( array( 'SMW\Subobject', 'render' )
+			call_user_func_array( array( 'SMW\Subobject', 'render' ), $subobjectArgs );
 		} else {
 			// SMW 1.8
-			call_user_func_array( array( 'SMWSubobject', 'render' ),
+			call_user_func_array( array( 'SMWSubobject', 'render' ), $subobjectArgs );
 		}
 		return;
 	}
