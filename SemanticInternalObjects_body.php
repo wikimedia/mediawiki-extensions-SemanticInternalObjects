@@ -344,7 +344,13 @@ class SIOHandler {
 		for ( $i = 2; $i < count( $origArgs ); $i++ ) {
 			$subobjectArgs[] = $origArgs[$i];
 		}
-		call_user_func_array( array( 'SMWSubobject', 'render' ), $subobjectArgs );
+		if ( class_exists( 'SMW\Subobject' ) ) {
+			// SMW 1.9+
+			call_user_func_array( array( 'SMW\Subobject', 'render' )
+		} else {
+			// SMW 1.8
+			call_user_func_array( array( 'SMWSubobject', 'render' ),
+		}
 		return;
 	}
 
