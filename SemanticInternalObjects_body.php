@@ -340,7 +340,16 @@ class SIOHandler {
 		$subobjectArgs = array( &$parser );
 		$subobjectArgs[1] = '';
 		// "main" property, pointing back to the page.
-		$subobjectArgs[2] = $origArgs[1] . '=' . $parser->getTitle()->getText();
+		$mainPageName = $parser->getTitle()->getText();
+		$mainPageNamespace = $parser->getTitle()->getNsText();
+		if ( $mainPageNamespace != '' ) {
+			$mainPageName = $mainPageNamespace . ':' . $mainPageName;
+		}
+		if ( $origArgs[1] == '' ) {
+			die( "Error: first argument to #set_internal cannot be blank." );
+		}
+		$subobjectArgs[2] = $origArgs[1] . '=' . $mainPageName;
+
 		for ( $i = 2; $i < count( $origArgs ); $i++ ) {
 			$subobjectArgs[] = $origArgs[$i];
 		}
