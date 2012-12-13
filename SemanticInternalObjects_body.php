@@ -173,8 +173,17 @@ class SIOSQLStore extends SMWSQLStore2 {
 					'value_blob' => $key
 				);
 			} elseif ( $isCoords ) {
-				if ( class_exists( 'SMWCompatibilityHelpers' ) ) {
+				if ( class_exists( 'SMWDIGeoCoord' ) ) {
 					// SMW 1.6+
+					$dataItem = $value->getDataItem();
+					$coordinateSet = $dataItem->getCoordinateSet();
+					$keys = array(
+						$coordinateSet['lat'],
+						$coordinateSet['lon']
+					);
+				} elseif ( class_exists( 'SMWCompatibilityHelpers' ) ) {
+					// Also SMW 1.6+ - this will probably
+					// never get called.
 					$dataItem = $value->getDataItem();
 					$keys = SMWCompatibilityHelpers::getDBkeysFromDataItem( $dataItem );
 				} else {
