@@ -338,6 +338,8 @@ class SIOHandler {
 		$origArgs = func_get_args();
 		// $parser is also $origArgs[0].
 		$subobjectArgs = array( &$parser );
+		// Blank first argument, so that subobject ID will be
+		// an automatically-generated random number.
 		$subobjectArgs[1] = '';
 		// "main" property, pointing back to the page.
 		$mainPageName = $parser->getTitle()->getText();
@@ -351,7 +353,20 @@ class SIOHandler {
 		$subobjectArgs[2] = $origArgs[1] . '=' . $mainPageName;
 
 		for ( $i = 2; $i < count( $origArgs ); $i++ ) {
-			$subobjectArgs[] = $origArgs[$i];
+			$propAndValue = explode( '=', $origArgs[$i] );
+			if ( count( $propAndValue ) != 2 ) continue;
+
+			list( $prop, $value ) = $propAndValue;
+			// If the property name ends with '#list', it's
+			// a comma-delimited group of values.
+			if ( substr( $prop, - 5 ) == '#list' ) {
+				$prop = substr( $prop, 0, strlen( $prop ) - 5 );
+				// #subobject has a different syntax for lists
+				$subobjectArgs[] = "$prop=$value";
+				$subobjectArgs[] = "+sep=,";
+			} else {
+				$subobjectArgs[] = $origArgs[$i];
+			}
 		}
 		if ( class_exists( 'SMW\Subobject' ) ) {
 			// SMW 1.9+
