@@ -371,8 +371,11 @@ class SIOHandler {
 			if ( substr( $prop, - 5 ) == '#list' ) {
 				$prop = substr( $prop, 0, strlen( $prop ) - 5 );
 				// #subobject has a different syntax for lists
-				$subobjectArgs[] = "$prop=$value";
-				$subobjectArgs[] = "+sep=,";
+				$actualValues = explode( ',', $value );
+				$subobjectArgs[] = "$prop=" . $actualValues[0];
+				for ( $i = 1; $i < count( $actualValues ); $i++ ) {
+					$subobjectArgs[] = $actualValues[$i];
+				}
 			} else {
 				$subobjectArgs[] = $origArgs[$i];
 			}
