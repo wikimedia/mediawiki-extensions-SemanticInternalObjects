@@ -295,12 +295,15 @@ $messages['ms'] = array(
 );
 
 /** Norwegian Bokmål (norsk (bokmål)‎)
+ * @author EvenT
  * @author Event
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
 	'semanticinternalobjects-desc' => 'Innstilling for interne objekter i Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Intern egenskap',
+	'semanticinternalobjects-mainpropertyname' => 'Egenskapsnavn som knytter denne malens felter til resten av siden:',
+	'semanticinternalobjects-propnamewarning' => '(bør bare brukes dersom denne malen kan ha multiple forekomster)',
 );
 
 /** Dutch (Nederlands)
