@@ -378,6 +378,13 @@ $messages['ru'] = array(
 	'semanticinternalobjects-desc' => 'Установка внутренних объектов в Semantic MediaWiki',
 );
 
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'semanticinternalobjects-internalproperty' => 'අභ්‍යන්තර දේපළ',
+);
+
 /** Slovak (slovenčina)
  * @author Helix84
  */
