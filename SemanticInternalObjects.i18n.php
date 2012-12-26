@@ -372,10 +372,13 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (русский)
+ * @author Pastakhov
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'semanticinternalobjects-desc' => 'Установка внутренних объектов в Semantic MediaWiki',
+	'semanticinternalobjects-internalproperty' => 'Внутреннее свойство',
+	'semanticinternalobjects-propnamewarning' => '(должен использоваться, только если этот шаблон может иметь несколько экземпляров)',
 );
 
 /** Sinhala (සිංහල)
