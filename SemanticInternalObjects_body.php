@@ -373,8 +373,8 @@ class SIOHandler {
 				// #subobject has a different syntax for lists
 				$actualValues = explode( ',', $value );
 				$subobjectArgs[] = "$prop=" . $actualValues[0];
-				for ( $i = 1; $i < count( $actualValues ); $i++ ) {
-					$subobjectArgs[] = $actualValues[$i];
+				for ( $j = 1; $j < count( $actualValues ); $j++ ) {
+					$subobjectArgs[] = $actualValues[$j];
 				}
 			} else {
 				$subobjectArgs[] = $origArgs[$i];
