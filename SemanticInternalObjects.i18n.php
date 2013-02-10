@@ -247,6 +247,13 @@ $messages['ja'] = array(
 	'semanticinternalobjects-propnamewarning' => '(このテンプレートが複数の実体を持つ可能性がある場合のみ使用すべきです)',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'semanticinternalobjects-internalproperty' => 'შიდა თვისება',
+);
+
 /** Korean (한국어)
  * @author 아라
  */
