@@ -52,6 +52,7 @@ $wgHooks['PageSchemasRegisterHandlers'][] = 'SIOPageSchemas::registerClass';
 $wgExtensionMessagesFiles['SemanticInternalObjects'] = $siogIP . '/SemanticInternalObjects.i18n.php';
 $wgExtensionMessagesFiles['SemanticInternalObjectsMagic'] = $siogIP . '/SemanticInternalObjects.i18n.magic.php';
 $wgAutoloadClasses['SIOHandler'] = $siogIP . '/SemanticInternalObjects_body.php';
+$wgAutoloadClasses['SIOSubobjectAlias'] = $siogIP . '/SIO_SubobjectAlias.php';
 $wgAutoloadClasses['SIOPageSchemas'] = $siogIP . '/SIO_PageSchemas.php';
 
 function siofRegisterParserFunctions( &$parser ) {
@@ -61,7 +62,7 @@ function siofRegisterParserFunctions( &$parser ) {
 }
 
 function siofRegisterAliasParserFunctions( &$parser ) {
-	$parser->setFunctionHook( 'set_internal', array( 'SIOHandler', 'doSetInternalAsAlias' ) );
-	$parser->setFunctionHook( 'set_internal_recurring_event', array( 'SIOHandler', 'doSetInternalRecurringEventAsAlias' ) );
+	$parser->setFunctionHook( 'set_internal', array( 'SIOSubobjectAlias', 'doSetInternal' ) );
+	$parser->setFunctionHook( 'set_internal_recurring_event', array( 'SIOSubobjectAlias', 'doSetInternalRecurringEvent' ) );
 	return true; // always return true, in order not to stop MW's hook processing!
 }
