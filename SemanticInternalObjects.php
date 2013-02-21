@@ -38,7 +38,6 @@ if ( $smwgDefaultStore == 'SMWSQLStore3' ) {
 	$wgHooks['TitleMoveComplete'][] = 'SIOHandler::handlePageMove';
 	$wgHooks['smwRefreshDataJobs'][] = 'SIOHandler::handleRefreshingOfInternalObjects';
 	$wgHooks['smwAddToRDFExport'][] = 'SIOSQLStore::createRDF';
-	$wgHooks['PageSchemasRegisterHandlers'][] = 'SIOPageSchemas::registerClass';
 	$wgAutoloadClasses['SIOSQLStore'] = $siogIP . '/SemanticInternalObjects_body.php';
 	if ( class_exists( 'SMWDIWikiPage' ) ) {
 		// SMW >= 1.6
@@ -47,6 +46,8 @@ if ( $smwgDefaultStore == 'SMWSQLStore3' ) {
 		$wgAutoloadClasses['SIOInternalObjectValue'] = $siogIP . '/SIO_RDFClasses.php';
 	}
 }
+
+$wgHooks['PageSchemasRegisterHandlers'][] = 'SIOPageSchemas::registerClass';
 
 $wgExtensionMessagesFiles['SemanticInternalObjects'] = $siogIP . '/SemanticInternalObjects.i18n.php';
 $wgExtensionMessagesFiles['SemanticInternalObjectsMagic'] = $siogIP . '/SemanticInternalObjects.i18n.magic.php';
