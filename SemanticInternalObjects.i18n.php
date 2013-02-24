@@ -441,6 +441,14 @@ $messages['tr'] = array(
 	'semanticinternalobjects-desc' => "Anlamsal MediaWiki'deki iç nesnelerin ayarlanması",
 );
 
+/** Ukrainian (українська)
+ * @author Base
+ */
+$messages['uk'] = array(
+	'semanticinternalobjects-desc' => "Налаштування внутрішніх об'єктів у Semantic MediaWiki",
+	'semanticinternalobjects-internalproperty' => 'Внутрішня властивість',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
