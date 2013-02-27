@@ -38,6 +38,8 @@ class SIOSubobjectAlias {
 			if ( count( $propAndValue ) != 2 ) continue;
 
 			list( $prop, $value ) = $propAndValue;
+			$prop = trim( $prop );
+			$value = trim( $value );
 			// If the property name ends with '#list', it's
 			// a comma-delimited group of values.
 			if ( substr( $prop, - 5 ) == '#list' ) {
