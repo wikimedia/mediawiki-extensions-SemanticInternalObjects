@@ -22,10 +22,11 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Kghbln
+ * @author Shirayuki
  * @author Yaron Koren
  */
 $messages['qqq'] = array(
-	'semanticinternalobjects-desc' => '{{{desc|name=Semantic Internal Objects|url=https://www.mediawiki.org/wiki/Extension:Semantic_Internal_Objects}}',
+	'semanticinternalobjects-desc' => '{{desc|name=Semantic Internal Objects|url=https://www.mediawiki.org/wiki/Extension:Semantic_Internal_Objects}}',
 	'semanticinternalobjects-internalproperty' => 'A semantic property stored internally in the page',
 );
 
