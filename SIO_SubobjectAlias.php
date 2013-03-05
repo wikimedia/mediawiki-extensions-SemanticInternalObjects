@@ -34,7 +34,7 @@ class SIOSubobjectAlias {
 		$subobjectArgs[2] = $origArgs[1] . '=' . $mainPageName;
 
 		for ( $i = 2; $i < count( $origArgs ); $i++ ) {
-			$propAndValue = explode( '=', $origArgs[$i] );
+			$propAndValue = explode( '=', $origArgs[$i], 2 );
 			if ( count( $propAndValue ) != 2 ) continue;
 
 			list( $prop, $value ) = $propAndValue;
