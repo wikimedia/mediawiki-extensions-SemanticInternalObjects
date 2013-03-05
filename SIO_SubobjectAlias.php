@@ -54,11 +54,14 @@ class SIOSubobjectAlias {
 				$subobjectArgs[] = $origArgs[$i];
 			}
 		}
-		if ( class_exists( 'SMW\SubobjectParser' ) ) {
+		if ( class_exists( 'SMW\SubobjectHandler' ) ) {
 			// SMW 1.9+
+			call_user_func_array( array( 'SMW\SubobjectHandler', 'render' ), $subobjectArgs );
+		} elseif ( class_exists( 'SMW\SubobjectParser' ) ) {
+			// SMW 1.9
 			call_user_func_array( array( 'SMW\SubobjectParser', 'render' ), $subobjectArgs );
 		} elseif ( class_exists( 'SMW\Subobject' ) ) {
-			// SMW 1.9+
+			// SMW 1.9
 			call_user_func_array( array( 'SMW\Subobject', 'render' ), $subobjectArgs );
 		} else {
 			// SMW 1.8
