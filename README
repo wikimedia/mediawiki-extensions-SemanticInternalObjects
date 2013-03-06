@@ -40,10 +40,9 @@ A sample call to #set_internal would be:
 }}
 
 This call would be placed in a page for a recipe, and it would define an object
-that had an automatically-generated name; if it were in a page called "Carrot
-cake", for instance, the object would be called "Carrot cake#1". If that page
-had subsequent calls to #set_internal, the objects that those calls generated
-would be called "Carrot cake#2", "Carrot cake#3", etc.
+that had an automatically-generated name; this name would start with
+"Carrot cake", but its exact name would depend on the version of Semantic
+MediaWiki being used.
 
 It should be noted that #set_internal does not display anything to the screen;
 display of the values has to be handled separately (this can be done easily
@@ -76,7 +75,7 @@ To install the extension, place the entire 'SemanticInternalObjects' directory
 within your MediaWiki 'extensions' directory, then add the following
 line to your 'LocalSettings.php' file:
 
-     require_once( "$IP/extensions/SemanticInternalObjects/SemanticInternalObjects.php" );
+ require_once( "$IP/extensions/SemanticInternalObjects/SemanticInternalObjects.php" );
 
 == Contact ==
 
