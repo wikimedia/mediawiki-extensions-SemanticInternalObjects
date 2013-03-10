@@ -39,9 +39,13 @@ $messages['aln'] = array(
 
 /** Arabic (العربية)
  * @author Meno25
+ * @author أحمد
  */
 $messages['ar'] = array(
 	'semanticinternalobjects-desc' => 'ضبط الأشياء الداخلية في ميدياويكي الدلالي',
+	'semanticinternalobjects-internalproperty' => 'خصيصة داخلية',
+	'semanticinternalobjects-mainpropertyname' => 'اسم الخصيصة المستخدمة لربط حقول هذا القالب ببقية الصفحة:',
+	'semanticinternalobjects-propnamewarning' => ')ينبغي استخدامه حصرا إن كان هذا القالب يمكن أن توجد منه استنساخات عديدة(',
 );
 
 /** Asturian (asturianu)
