@@ -382,6 +382,7 @@ $messages['pt-br'] = array(
  */
 $messages['roa-tara'] = array(
 	'semanticinternalobjects-desc' => "'Mboste le oggette inderne jndr'à MediaUicchi Semandiche",
+	'semanticinternalobjects-internalproperty' => 'Probbietà inderne',
 );
 
 /** Russian (русский)
