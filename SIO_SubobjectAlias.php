@@ -54,15 +54,14 @@ class SIOSubobjectAlias {
 				$subobjectArgs[] = $origArgs[$i];
 			}
 		}
-		if ( class_exists( 'SMW\SubobjectHandler' ) ) {
-			// SMW 1.9+
-			call_user_func_array( array( 'SMW\SubobjectHandler', 'render' ), $subobjectArgs );
-		} elseif ( class_exists( 'SMW\SubobjectParser' ) ) {
-			// SMW 1.9
-			call_user_func_array( array( 'SMW\SubobjectParser', 'render' ), $subobjectArgs );
-		} elseif ( class_exists( 'SMW\Subobject' ) ) {
-			// SMW 1.9
-			call_user_func_array( array( 'SMW\Subobject', 'render' ), $subobjectArgs );
+
+		// Use SMW\SubobjectParserFunction class
+		if ( class_exists( 'SMW\SubobjectParserFunction' ) ) {
+			$instance = new SMW\SubobjectParserFunction(
+				new SMW\ParserData( $parser->getTitle(), $parser->getOutput() ),
+				new SMW\Subobject( $parser->getTitle() )
+			);
+			return $instance->parse( new SMW\ParserParameterFormatter( $subobjectArgs ) );
 		} else {
 			// SMW 1.8
 			call_user_func_array( array( 'SMWSubobject', 'render' ), $subobjectArgs );
@@ -83,24 +82,33 @@ class SIOSubobjectAlias {
 		// First param should be a standalone property name.
 		$objToPagePropName = array_shift( $params );
 
-		$results = SMWSetRecurringEvent::getDatesForRecurringEvent( $params );
-		if ( $results == null ) {
-			return null;
-		}
-
-		list( $property, $all_date_strings, $unused_params ) = $results;
-
-		// Mimic a call to #subobject for each date.
-		foreach ( $all_date_strings as $date_string ) {
-			$first_params = array(
-				&$parser,
-				'',
-				$objToPagePropName . '=' . $parser->getTitle()->getText(),
-				"$property=$date_string"
+		// Use RecurringEventsParserFunction class
+		if ( class_exists( 'SMW\RecurringEventsParserFunction' ) ) {
+			$instance = new SMW\RecurringEventsParserFunction(
+				new SMW\ParserData( $parser->getTitle(), $parser->getOutput() ),
+				new SMW\Subobject( $parser->getTitle() )
 			);
-			
-			$cur_params = array_merge( $first_params, $unused_params );
-			call_user_func_array( array( 'SMWSubobject', 'render' ), $cur_params );
+			return $instance->parse( new SMW\ParserParameterFormatter( $params ) );
+		} else {
+			$results = SMWSetRecurringEvent::getDatesForRecurringEvent( $params );
+			if ( $results == null ) {
+				return null;
+			}
+
+			list( $property, $all_date_strings, $unused_params ) = $results;
+
+			// Mimic a call to #subobject for each date.
+			foreach ( $all_date_strings as $date_string ) {
+				$first_params = array(
+					&$parser,
+					'',
+					$objToPagePropName . '=' . $parser->getTitle()->getText(),
+					"$property=$date_string"
+				);
+
+				$cur_params = array_merge( $first_params, $unused_params );
+				call_user_func_array( array( 'SMWSubobject', 'render' ), $cur_params );
+			}
 		}
 	}
 
