@@ -1,20 +1,20 @@
 <?php
 /**
  * Class that holds methods used to call Semantic MediaWiki's #subobject
- * parser function to store data when #set_internal or
- * #set_internal_recurring_event are called.
+ * parser function (and, for SMW 1.9 and higher, the #set_recurring_event
+ * function) to store data when #set_internal or #set_internal_recurring_event
+ * are called.
  *
  * @author Yaron Koren
+ * @author mwjames
  */
 class SIOSubobjectAlias {
 
 	public static function doSetInternal( &$parser ) {
-		// This is a hack, since SMW's SMWSubobject::render() call is
-		// not meant to be called outside of SMW. However, this seemed
-		// like the better solution than copying over all of that
-		// method's code. Ideally, a true public function can be
-		// added to SMW, that handles a subobject creation, that this
-		// code can then call.
+		// For SMW 1.8, this is a hack, since SMW's
+		// SMWSubobject::render() call is not meant to be called
+		// outside of SMW. Fortunately, for SMW 1.9 and higher,
+		// a less hacky approach exists.
 
 		$origArgs = func_get_args();
 		// $parser is also $origArgs[0].
@@ -55,13 +55,13 @@ class SIOSubobjectAlias {
 			}
 		}
 
-		// Use SMW\SubobjectParserFunction class
 		if ( class_exists( 'SMW\SubobjectParserFunction' ) ) {
-			$instance = new SMW\SubobjectParserFunction(
+			// SMW 1.9+
+			$subobjectFunction = new SMW\SubobjectParserFunction(
 				new SMW\ParserData( $parser->getTitle(), $parser->getOutput() ),
 				new SMW\Subobject( $parser->getTitle() )
 			);
-			return $instance->parse( new SMW\ParserParameterFormatter( $subobjectArgs ) );
+			return $subobjectFunction->parse( new SMW\ParserParameterFormatter( $subobjectArgs ) );
 		} else {
 			// SMW 1.8
 			call_user_func_array( array( 'SMWSubobject', 'render' ), $subobjectArgs );
@@ -70,32 +70,32 @@ class SIOSubobjectAlias {
 	}
 
 	/**
-	 * Just calls SMW's own #subobject for each instance of this
-	 * recurring event.
+	 * For SMW 1.8, calls SMW's own #subobject for each instance of
+	 * this recurring event. For SMW 1.9 and higher, calls
+	 * #set_recurring_event (which itself uses subobjects).
 	 */
 	public static function doSetInternalRecurringEvent( &$parser ) {
-		// This is a hack, as is doSetInternal() - see comments
-		// in that method.
 		$params = func_get_args();
 		array_shift( $params ); // We already know the $parser ...
 
-		// First param should be a standalone property name.
-		$objToPagePropName = array_shift( $params );
-
-		// Use RecurringEventsParserFunction class
 		if ( class_exists( 'SMW\RecurringEventsParserFunction' ) ) {
-			$instance = new SMW\RecurringEventsParserFunction(
+			// SMW 1.9+
+			$recurringEventFunction = new SMW\RecurringEventsParserFunction(
 				new SMW\ParserData( $parser->getTitle(), $parser->getOutput() ),
 				new SMW\Subobject( $parser->getTitle() )
 			);
-			return $instance->parse( new SMW\ParserParameterFormatter( $params ) );
+			return $recurringEventFunction->parse( new SMW\ParserParameterFormatter( $params ) );
 		} else {
+			// SMW 1.8
 			$results = SMWSetRecurringEvent::getDatesForRecurringEvent( $params );
 			if ( $results == null ) {
 				return null;
 			}
 
 			list( $property, $all_date_strings, $unused_params ) = $results;
+
+			// First param should be a standalone property name.
+			$objToPagePropName = array_shift( $params );
 
 			// Mimic a call to #subobject for each date.
 			foreach ( $all_date_strings as $date_string ) {
