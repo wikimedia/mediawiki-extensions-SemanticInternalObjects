@@ -28,6 +28,16 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'semanticinternalobjects-desc' => '{{desc|name=Semantic Internal Objects|url=https://www.mediawiki.org/wiki/Extension:Semantic_Internal_Objects}}',
 	'semanticinternalobjects-internalproperty' => 'A semantic property stored internally in the page',
+	'semanticinternalobjects-mainpropertyname' => 'Used as label for the input box.
+
+Followed by the following message and the input box.
+* {{msg-mw|Semanticinternalobjects-propnamewarning}}',
+	'semanticinternalobjects-propnamewarning' => 'Used as warning.
+
+Preceded by the following message (label for the input box):
+* {{msg-mw|Semanticinternalobjects-mainpropertyname}}
+
+Followed by the input box.',
 );
 
 /** Gheg Albanian (Gegë)
