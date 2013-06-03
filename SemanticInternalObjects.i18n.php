@@ -317,7 +317,7 @@ $messages['ms'] = array(
 	'semanticinternalobjects-propnamewarning' => '(hanya boleh digunakan jika templat ini boleh mempunyai berbilang tika)',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author EvenT
  * @author Event
  * @author Nghtwlkr
