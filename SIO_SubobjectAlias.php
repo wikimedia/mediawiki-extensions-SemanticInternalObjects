@@ -59,7 +59,8 @@ class SIOSubobjectAlias {
 			// SMW 1.9+
 			$subobjectFunction = new SMW\SubobjectParserFunction(
 				new SMW\ParserData( $parser->getTitle(), $parser->getOutput() ),
-				new SMW\Subobject( $parser->getTitle() )
+				new SMW\Subobject( $parser->getTitle() ),
+				new SMW\MessageFormatter( $parser->getTargetLanguage() )
 			);
 			return $subobjectFunction->parse( new SMW\ParserParameterFormatter( $subobjectArgs ) );
 		} else {
@@ -82,7 +83,9 @@ class SIOSubobjectAlias {
 			// SMW 1.9+
 			$recurringEventFunction = new SMW\RecurringEventsParserFunction(
 				new SMW\ParserData( $parser->getTitle(), $parser->getOutput() ),
-				new SMW\Subobject( $parser->getTitle() )
+				new SMW\Subobject( $parser->getTitle() ),
+				new SMW\MessageFormatter( $parser->getTargetLanguage() ),
+				\SMW\Settings::newFromGlobals()
 			);
 			return $recurringEventFunction->parse( new SMW\ParserParameterFormatter( $params ) );
 		} else {
