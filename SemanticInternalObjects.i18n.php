@@ -295,6 +295,7 @@ $messages['ksh'] = array(
 $messages['lb'] = array(
 	'semanticinternalobjects-desc' => 'Astellung vun internen Objeten a Semantic MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Intern Eegeschaft',
+	'semanticinternalobjects-propnamewarning' => '(soll nëmme Benotzt gi wann dës Schabloun méi Instanze kann hunn)',
 );
 
 /** Macedonian (македонски)
