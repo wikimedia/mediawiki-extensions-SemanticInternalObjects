@@ -461,11 +461,14 @@ $messages['tr'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Andriykopanytsia
  * @author Base
  */
 $messages['uk'] = array(
 	'semanticinternalobjects-desc' => "Налаштування внутрішніх об'єктів у Semantic MediaWiki",
 	'semanticinternalobjects-internalproperty' => 'Внутрішня властивість',
+	'semanticinternalobjects-mainpropertyname' => 'Назва властивості для підключення полів цього шаблону на решту сторінки:',
+	'semanticinternalobjects-propnamewarning' => '(слід використовувати, тільки якщо цей шаблон може мати кілька екземплярів)',
 );
 
 /** Vietnamese (Tiếng Việt)
