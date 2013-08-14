@@ -429,6 +429,7 @@ $messages['sk'] = array(
 $messages['sl'] = array(
 	'semanticinternalobjects-desc' => 'Nastavitev notranjih predmetov v semantičnem MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Notranja lastnina',
+	'semanticinternalobjects-propnamewarning' => '(se lahko uporablja samo, če ima lahko predloga več primerkov)',
 );
 
 /** Swedish (svenska)
