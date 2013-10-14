@@ -97,6 +97,8 @@ $messages['bs'] = array(
 $messages['ca'] = array(
 	'semanticinternalobjects-desc' => "Definició d'objectes interns en el Semantic MediaWiki",
 	'semanticinternalobjects-internalproperty' => 'Propietat interna',
+	'semanticinternalobjects-mainpropertyname' => 'Nom de la propietat per connectar els camps de la plantilla a la resta de la pàgina:',
+	'semanticinternalobjects-propnamewarning' => "(només s'hauria d'utilitzar si la plantilla pot tenir múltiples instàncies)",
 );
 
 /** German (Deutsch)
