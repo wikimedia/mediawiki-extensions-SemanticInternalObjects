@@ -433,6 +433,7 @@ $messages['sk'] = array(
 $messages['sl'] = array(
 	'semanticinternalobjects-desc' => 'Nastavitev notranjih predmetov v semantičnem MediaWiki',
 	'semanticinternalobjects-internalproperty' => 'Notranja lastnina',
+	'semanticinternalobjects-mainpropertyname' => 'Ime lastnosti za povezovanje polj te predloge s preostalo stranjo:',
 	'semanticinternalobjects-propnamewarning' => '(se lahko uporablja samo, če ima lahko predloga več primerkov)',
 );
 
