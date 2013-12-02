@@ -19,7 +19,7 @@ $magicWords['ar'] = array(
 
 /** Egyptian Spoken Arabic (مصرى) */
 $magicWords['arz'] = array(
-	'set_internal' => array( 0, 'ضبط_داخلي', 'set_internal' ),
+	'set_internal' => array( 0, 'ضبط_داخلي' ),
 );
 
 /** German (Deutsch) */
