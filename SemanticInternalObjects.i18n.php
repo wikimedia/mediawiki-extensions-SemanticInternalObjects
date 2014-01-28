@@ -141,6 +141,13 @@ $messages['es'] = array(
 	'semanticinternalobjects-propnamewarning' => '(debe ser utilizado únicamente si esta plantilla puede tener varias instancias)',
 );
 
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'semanticinternalobjects-internalproperty' => 'ویژگی‌های داخلی',
+);
+
 /** Finnish (suomi)
  * @author Centerlink
  * @author Crt
