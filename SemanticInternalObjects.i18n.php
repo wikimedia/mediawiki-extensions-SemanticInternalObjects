@@ -145,7 +145,10 @@ $messages['es'] = array(
  * @author Armin1392
  */
 $messages['fa'] = array(
+	'semanticinternalobjects-desc' => 'تنظیمات داخلی اشیاء در مدیاویکی معنایی',
 	'semanticinternalobjects-internalproperty' => 'ویژگی‌های داخلی',
+	'semanticinternalobjects-mainpropertyname' => 'نام خاصیت برای اتصال این زمینه‌های الگو  به بقیهٔ صفحه:',
+	'semanticinternalobjects-propnamewarning' => '(اگر این الگو می‌تواند چند نمونه داشته باشد،تنها باید مورد استفاده قرار گیرد )',
 );
 
 /** Finnish (suomi)
