@@ -9,7 +9,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'SIO_VERSION', '0.7.6' );
+define( 'SIO_VERSION', '0.8.0' );
 
 $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserhook'][] = array(
 	'path' => __FILE__,
@@ -49,6 +49,7 @@ if ( $smwgDefaultStore == 'SMWSQLStore3' ) {
 
 $wgHooks['PageSchemasRegisterHandlers'][] = 'SIOPageSchemas::registerClass';
 
+$wgMessagesDirs['SemanticInternalObjects'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SemanticInternalObjects'] = $siogIP . '/SemanticInternalObjects.i18n.php';
 $wgExtensionMessagesFiles['SemanticInternalObjectsMagic'] = $siogIP . '/SemanticInternalObjects.i18n.magic.php';
 $wgAutoloadClasses['SIOHandler'] = $siogIP . '/SemanticInternalObjects_body.php';
