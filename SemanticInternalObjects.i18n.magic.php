@@ -61,3 +61,9 @@ $magicWords['nl'] = array(
 $magicWords['sr-el'] = array(
 	'set_internal' => array( 0, 'postavi_unutrašnje' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$magicWords['zh-hans'] = array(
+	'set_internal' => array( 0, '设置内置' ),
+	'set_internal_recurring_event' => array( 0, '设置内置循环活动' ),
+);
