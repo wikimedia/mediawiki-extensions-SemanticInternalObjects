@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Imre",
-            "Kghbln",
-            "Metalhead64"
-        ]
-    },
-    "semanticinternalobjects-desc": "Ermöglicht das Definieren interner semantischer Datenobjekte",
-    "semanticinternalobjects-internalproperty": "Internes Attribut",
-    "semanticinternalobjects-mainpropertyname": "Name des Attributs, mit dem die Felder dieser Vorlage mit dem Rest der Seite verbunden werden:",
-    "semanticinternalobjects-propnamewarning": "(sollte nur verwendet werden, sofern diese Vorlage mehrere Instanzen haben kann)"
+	"@metadata": {
+		"authors": [
+			"Imre",
+			"Kghbln",
+			"Metalhead64"
+		]
+	},
+	"semanticinternalobjects-desc": "Ermöglicht das Definieren interner semantischer Datenobjekte",
+	"semanticinternalobjects-internalproperty": "Internes Attribut",
+	"semanticinternalobjects-mainpropertyname": "Name des Attributs, mit dem die Felder dieser Vorlage mit dem Rest der Seite verbunden werden:",
+	"semanticinternalobjects-propnamewarning": "(sollte nur verwendet werden, sofern diese Vorlage mehrere Instanzen haben kann)"
 }
