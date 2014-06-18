@@ -21,7 +21,7 @@ class SIOPageSchemas extends PSExtensionHandler {
 	}
 
 	public static function getTemplateDisplayString() {
-		return wfMsg( 'semanticinternalobjects-internalproperty' );
+		return wfMessage( 'semanticinternalobjects-internalproperty' )->text();
 	}
 
 	/**
@@ -70,7 +70,7 @@ class SIOPageSchemas extends PSExtensionHandler {
 				$hasExistingValues = true;
 			}
 		}
-		$text = '<p>' . wfMsgHtml( 'semanticinternalobjects-mainpropertyname' ) . ' ' . wfMsgHtml( 'semanticinternalobjects-propnamewarning' ) . ' ';
+		$text = '<p>' . wfMessage( 'semanticinternalobjects-mainpropertyname' )->escaped() . ' ' . wfMessage( 'semanticinternalobjects-propnamewarning' )->escaped() . ' ';
 		$propName = PageSchemas::getValueFromObject( $prop_array, 'name' );
 		$text .= Html::input( 'sio_property_name_num', $propName, array( 'size' => 15 ) ) . "\n";
 
