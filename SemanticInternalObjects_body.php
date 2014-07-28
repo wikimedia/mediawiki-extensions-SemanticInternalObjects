@@ -476,7 +476,12 @@ class SIOHandler {
 		$uniqueTitles = array();
 		
 		foreach ( $jobs as $i => $job ) {
-			$title = Title::makeTitleSafe( $job->title->getNamespace(), $job->title->getText() );
+			if ( method_exists( $job, 'getTitle' ) ) {
+				// MW 1.20?
+				$title = Title::makeTitleSafe( $job->getTitle()->getNamespace(), $job->getTitle()->getText() );
+			} else {
+				$title = Title::makeTitleSafe( $job->title->getNamespace(), $job->title->getText() );
+			}
 			$id = $title->getArticleID();
 			$uniqueTitles[$id] = $title;
 		}
@@ -498,15 +503,21 @@ class SIOHandler {
 	 * a SIO object instead of filtering them down to unique titles.
 	 */
 	 static function handleRefreshingOfInternalObjects( &$jobs ) {
-	 	$allJobs = $jobs;
-	 	$jobs = array();
-	 	
-	 	foreach ( $allJobs as $job ) {
-	 		if ( strpos( $job->title->getText(), '#' ) === false ) {
-	 			$jobs[] = $job;
-	 		}
-	 	}
-	 	
+		$allJobs = $jobs;
+		$jobs = array();
+		
+		foreach ( $allJobs as $job ) {
+			if ( method_exists( $job, 'getTitle' ) ) {
+				// MW 1.20?
+				$jobTitle = $job->getTitle();
+			} else {
+				$jobTitle = $job->title;
+			}
+			if ( strpos( $jobTitle->getText(), '#' ) === false ) {
+				$jobs[] = $job;
+			}
+		}
+
 		return true;
 	}
 	
