@@ -42,8 +42,11 @@ if ( $smwgDefaultStore == 'SMWSQLStore3' ) {
 	if ( class_exists( 'SMWDIWikiPage' ) ) {
 		// SMW >= 1.6
 		$wgAutoloadClasses['SIOInternalObjectValue'] = $siogIP . '/SIO_RDFClasses2.php';
+		$wgAutoloadClasses['SIOTitle'] = $siogIP . '/SIO_RDFClasses2.php';
 	} else {
 		$wgAutoloadClasses['SIOInternalObjectValue'] = $siogIP . '/SIO_RDFClasses.php';
+		$wgAutoloadClasses['SIOTitle'] = $siogIP . '/SIO_RDFClasses.php';
+		$wgAutoloadClasses['SIOExporter'] = $siogIP . '/SIO_RDFClasses.php';
 	}
 }
 
@@ -53,6 +56,7 @@ $wgMessagesDirs['SemanticInternalObjects'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SemanticInternalObjects'] = $siogIP . '/SemanticInternalObjects.i18n.php';
 $wgExtensionMessagesFiles['SemanticInternalObjectsMagic'] = $siogIP . '/SemanticInternalObjects.i18n.magic.php';
 $wgAutoloadClasses['SIOHandler'] = $siogIP . '/SemanticInternalObjects_body.php';
+$wgAutoloadClasses['SIOInternalObject'] = $siogIP . '/SemanticInternalObjects_body.php';
 $wgAutoloadClasses['SIOSubobjectAlias'] = $siogIP . '/SIO_SubobjectAlias.php';
 $wgAutoloadClasses['SIOPageSchemas'] = $siogIP . '/SIO_PageSchemas.php';
 
