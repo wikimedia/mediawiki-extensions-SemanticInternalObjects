@@ -67,3 +67,9 @@ $magicWords['zh-hans'] = array(
 	'set_internal' => array( 0, '设置内部' ),
 	'set_internal_recurring_event' => array( 0, '设置内部循环活动' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$magicWords['zh-hant'] = array(
+	'set_internal' => array( 0, '設定內部' ),
+	'set_internal_recurring_event' => array( 0, '設定內部循環活動', '設置內部定期活動' ),
+);
