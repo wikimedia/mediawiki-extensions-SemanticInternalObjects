@@ -23,6 +23,12 @@ $magicWords['arz'] = array(
 	'set_internal_recurring_event' => array( 0, 'ضبط_حدث_داخلى_متكرر' ),
 );
 
+/** Chuvash (Чӑвашла) */
+$magicWords['cv'] = array(
+	'set_internal' => array( 0, 'set_internal' ),
+	'set_internal_recurring_event' => array( 0, 'set_internal_recurring_event' ),
+);
+
 /** German (Deutsch) */
 $magicWords['de'] = array(
 	'set_internal' => array( 0, 'setze_intern' ),
