@@ -26,8 +26,6 @@ $wgExtensionCredits['semantic'][] = array(
 	'license-name' => 'GPL-2.0+'
 );
 
-$siogIP = dirname( __FILE__ );
-
 // If we're using SMWSQLStore3 (introduced in SMW 1.8), just
 // call SMW's own #subobject, which has a similar, though not
 // identical, syntax.
@@ -44,27 +42,27 @@ if ( $smwgDefaultStore == 'SMWSQLStore3' ) {
 	$wgHooks['TitleMoveComplete'][] = 'SIOHandler::handlePageMove';
 	$wgHooks['smwRefreshDataJobs'][] = 'SIOHandler::handleRefreshingOfInternalObjects';
 	$wgHooks['smwAddToRDFExport'][] = 'SIOSQLStore::createRDF';
-	$wgAutoloadClasses['SIOSQLStore'] = $siogIP . '/SemanticInternalObjects_body.php';
+	$wgAutoloadClasses['SIOSQLStore'] = __DIR__ . '/SemanticInternalObjects_body.php';
 	if ( class_exists( 'SMWDIWikiPage' ) ) {
 		// SMW >= 1.6
-		$wgAutoloadClasses['SIOInternalObjectValue'] = $siogIP . '/SIO_RDFClasses2.php';
-		$wgAutoloadClasses['SIOTitle'] = $siogIP . '/SIO_RDFClasses2.php';
+		$wgAutoloadClasses['SIOInternalObjectValue'] = __DIR__ . '/SIO_RDFClasses2.php';
+		$wgAutoloadClasses['SIOTitle'] = __DIR__ . '/SIO_RDFClasses2.php';
 	} else {
-		$wgAutoloadClasses['SIOInternalObjectValue'] = $siogIP . '/SIO_RDFClasses.php';
-		$wgAutoloadClasses['SIOTitle'] = $siogIP . '/SIO_RDFClasses.php';
-		$wgAutoloadClasses['SIOExporter'] = $siogIP . '/SIO_RDFClasses.php';
+		$wgAutoloadClasses['SIOInternalObjectValue'] = __DIR__ . '/SIO_RDFClasses.php';
+		$wgAutoloadClasses['SIOTitle'] = __DIR__ . '/SIO_RDFClasses.php';
+		$wgAutoloadClasses['SIOExporter'] = __DIR__ . '/SIO_RDFClasses.php';
 	}
 }
 
 $wgHooks['PageSchemasRegisterHandlers'][] = 'SIOPageSchemas::registerClass';
 
 $wgMessagesDirs['SemanticInternalObjects'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SemanticInternalObjects'] = $siogIP . '/SemanticInternalObjects.i18n.php';
-$wgExtensionMessagesFiles['SemanticInternalObjectsMagic'] = $siogIP . '/SemanticInternalObjects.i18n.magic.php';
-$wgAutoloadClasses['SIOHandler'] = $siogIP . '/SemanticInternalObjects_body.php';
-$wgAutoloadClasses['SIOInternalObject'] = $siogIP . '/SemanticInternalObjects_body.php';
-$wgAutoloadClasses['SIOSubobjectAlias'] = $siogIP . '/SIO_SubobjectAlias.php';
-$wgAutoloadClasses['SIOPageSchemas'] = $siogIP . '/SIO_PageSchemas.php';
+$wgExtensionMessagesFiles['SemanticInternalObjects'] = __DIR__ . '/SemanticInternalObjects.i18n.php';
+$wgExtensionMessagesFiles['SemanticInternalObjectsMagic'] = __DIR__ . '/SemanticInternalObjects.i18n.magic.php';
+$wgAutoloadClasses['SIOHandler'] = __DIR__ . '/SemanticInternalObjects_body.php';
+$wgAutoloadClasses['SIOInternalObject'] = __DIR__ . '/SemanticInternalObjects_body.php';
+$wgAutoloadClasses['SIOSubobjectAlias'] = __DIR__ . '/SIO_SubobjectAlias.php';
+$wgAutoloadClasses['SIOPageSchemas'] = __DIR__ . '/SIO_PageSchemas.php';
 
 function siofRegisterParserFunctions( &$parser ) {
 	$parser->setFunctionHook( 'set_internal', array( 'SIOHandler', 'doSetInternal' ) );
