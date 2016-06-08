@@ -13,7 +13,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 // Define extension's version
-define( 'SIO_VERSION', '0.8.1' );
+define( 'SIO_VERSION', '0.8.2' );
 
 // Display extension's information on "Special:Version"
 $wgExtensionCredits['semantic'][] = array(
