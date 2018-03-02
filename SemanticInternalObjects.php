@@ -23,7 +23,7 @@ $wgExtensionCredits['semantic'][] = array(
 	'author' => 'Yaron Koren',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Semantic_Internal_Objects',
 	'descriptionmsg' => 'semanticinternalobjects-desc',
-	'license-name' => 'GPL-2.0+'
+	'license-name' => 'GPL-2.0-or-later'
 );
 
 // If we're using SMWSQLStore3 (introduced in SMW 1.8), just
