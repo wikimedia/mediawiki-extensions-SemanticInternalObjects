@@ -65,7 +65,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 
 		// Get the set of IDs for internal objects to be deleted.
 		$iw = '';
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		$res = $db->select(
 			'smw_ids',
 			array( 'smw_id' ),
@@ -213,7 +213,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 		// Go through all SIOs for the current page, create RDF for
 		// each one, and add it to the general array.
 		$iw = '';
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		$res = $db->select(
 			'smw_ids',
 			array( 'smw_id', 'smw_namespace', 'smw_title' ),
@@ -435,7 +435,7 @@ class SIOHandler {
 		$newNamespace = $new_title->getNamespace();
 		$iw = '';
 		$sioNames = array();
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		// Unfortunately, there's no foolproof way to do the replacement
 		// with a single SQL call, using regexps and wildcards -
 		// instead, we first get the set of all matching entries in
