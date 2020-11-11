@@ -119,7 +119,9 @@ class SIOPageSchemas extends PSExtensionHandler {
 	}
 
 	public static function generatePages( $pageSchemaObj, $selectedPages ) {
-		global $smwgContLang, $wgUser;
+		global $wgUser;
+
+		$smwgContLang = function_exists( 'smwfContLang' ) ? smwfContLang() : $GLOBALS['smwgContLang'];
 
 		$datatypeLabels = $smwgContLang->getDatatypeLabels();
 		$pageTypeLabel = $datatypeLabels['_wpg'];
