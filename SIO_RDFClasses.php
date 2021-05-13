@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Classes that enable correct RDF export of Semantic Internal Objects data.
  * This file holds the versions of these classes necessary for SMW 1.5 only.
@@ -19,8 +21,7 @@ class SIOTitle {
 	function getPrefixedName() {
 		$s = '';
 		if ( 0 != $this->mNamespace ) {
-			global $wgContLang;
-			$s .= $wgContLang->getNsText( $this->mNamespace ) . ':';
+			$s .= MediaWikiServices::getInstance()->getContentLanguage()->getNsText( $this->mNamespace ) . ':';
 		}
 		$s .= $this->mName;
 		return $s;
