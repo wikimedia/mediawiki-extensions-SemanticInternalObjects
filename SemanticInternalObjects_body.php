@@ -5,6 +5,8 @@
  * @author Yaron Koren
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Class that holds information on a single internal object, including all
  * its properties.
@@ -280,8 +282,6 @@ class SIOHandler {
 	 * Handle the #set_internal parser function.
 	 */
 	public static function doSetInternal( &$parser ) {
-		global $wgContLang;
-
 		$title = $parser->getTitle();
 		$mainPageFullName = $title->getText();
 		if ( ( $nsText = $title->getNsText() ) != '' ) {
@@ -305,7 +305,7 @@ class SIOHandler {
 		$params = func_get_args();
 		array_shift( $params ); // we already know the $parser...
 		$internalObject = new SIOInternalObject( $title, $curObjectNum );
-		$objToPagePropName = $wgContLang->ucfirst( array_shift( $params ) );
+		$objToPagePropName = MediaWikiServices::getInstance()->getContentLanguage()->ucfirst( array_shift( $params ) );
 		$internalObject->addPropertyAndValue( $objToPagePropName, self::$mCurPageFullName );
 		
 		foreach ( $params as $param ) {
