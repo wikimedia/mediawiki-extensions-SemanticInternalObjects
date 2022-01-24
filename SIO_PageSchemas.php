@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Functions for handling Semantic Internal Objects data within the Page Schemas
  * extension.
@@ -146,11 +148,11 @@ class SIOPageSchemas extends PSExtensionHandler {
 			$jobs[] = new PSCreatePageJob( $propTitle, $jobParams );
 		}
 
-		if ( class_exists( 'JobQueueGroup' ) ) {
-			JobQueueGroup::singleton()->push( $jobs );
+		if ( method_exists( MediaWikiServices::class, 'getJobQueueGroup' ) ) {
+			// MW 1.37+
+			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
 		} else {
-			// MW <= 1.20
-			Job::batchInsert( $jobs );
+			JobQueueGroup::singleton()->push( $jobs );
 		}
 	}
 }
