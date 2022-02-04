@@ -63,22 +63,17 @@ class SIOSQLStore extends SMWSQLStore2 {
 	static function deleteDataForPage( $subject ) {
 		$pageName = $subject->getDBKey();
 		$namespace = $subject->getNamespace();
-		$idsForDeletion = array();
 
 		// Get the set of IDs for internal objects to be deleted.
 		$iw = '';
 		$db = wfGetDB( DB_REPLICA );
-		$res = $db->select(
+		$idsForDeletion = $db->selectFieldValues(
 			'smw_ids',
-			array( 'smw_id' ),
+			'smw_id',
 			'smw_title LIKE ' . $db->addQuotes( $pageName . '#%' ) . ' AND ' . 'smw_namespace=' . $db->addQuotes( $namespace ) . ' AND smw_iw=' . $db->addQuotes( $iw ),
 			'SIO::getSMWPageObjectIDs'
 		);
 		
-		while ( $row = $db->fetchObject( $res ) ) {
-			$idsForDeletion[] = $row->smw_id;
-		}
-
 		if ( count( $idsForDeletion ) == 0 ) {
 			return;
 		}
@@ -223,7 +218,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 			'SIO::getSMWPageObjectIDs'
 		);
 		
-		while ( $row = $db->fetchObject( $res ) ) {
+		foreach ( $res as $row ) {
 			$value = new SIOInternalObjectValue( $row->smw_title, intval( $row->smw_namespace ) );
 			if ( class_exists( 'SMWSqlStubSemanticData' ) ) {
 				// SMW >= 1.6
@@ -434,23 +429,18 @@ class SIOHandler {
 		$newPageName = $new_title->getDBkey();
 		$newNamespace = $new_title->getNamespace();
 		$iw = '';
-		$sioNames = array();
 		$db = wfGetDB( DB_REPLICA );
 		// Unfortunately, there's no foolproof way to do the replacement
 		// with a single SQL call, using regexps and wildcards -
 		// instead, we first get the set of all matching entries in
 		// the 'smw_ids' table, then call an explicit update on each
 		// one.
-		$res = $db->select(
+		$sioNames = $db->selectFieldValues(
 			'smw_ids',
-			array( 'smw_title' ),
+			'smw_title',
 			'smw_title LIKE ' . $db->addQuotes( $oldPageName . '#%' ) . ' AND ' . 'smw_namespace=' . $db->addQuotes( $oldNamespace ) . ' AND smw_iw=' . $db->addQuotes( $iw ),
 			'SIO::getTitlesForPageMove'
 		);
-		
-		while ( $row = $db->fetchObject( $res ) ) {
-			$sioNames[] = $row->smw_title;
-		}
 		
 		foreach ( $sioNames as $sioName ) {
 			// update the name, and possibly the namespace as well
