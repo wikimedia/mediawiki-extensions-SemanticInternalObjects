@@ -4,11 +4,12 @@
 			"Brunoperel",
 			"Crochet.david",
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"Verdy p"
 		]
 	},
-	"semanticinternalobjects-desc": "Configuration des objets internes dans Semantic MediaWiki",
+	"semanticinternalobjects-desc": "Configuration des objets internes dans MediaWiki Sémantique",
 	"semanticinternalobjects-internalproperty": "Propriété interne",
-	"semanticinternalobjects-mainpropertyname": "Nom de propriété pour connecter les champs de ce modèle pour le reste de la page :",
-	"semanticinternalobjects-propnamewarning": "(doit être utilisé uniquement si ce modèle peut avoir plusieurs instances)"
+	"semanticinternalobjects-mainpropertyname": "Nom de propriété pour connecter les champs de ce modèle au reste de la page :",
+	"semanticinternalobjects-propnamewarning": "(ceci ne doit être utilisé que si ce modèle peut avoir plusieurs instances dans la page)"
 }
