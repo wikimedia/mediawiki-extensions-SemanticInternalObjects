@@ -121,8 +121,6 @@ class SIOPageSchemas extends PSExtensionHandler {
 	}
 
 	public static function generatePages( $pageSchemaObj, $selectedPages ) {
-		global $wgUser;
-
 		$smwgContLang = function_exists( 'smwfContLang' ) ? smwfContLang() : $GLOBALS['smwgContLang'];
 
 		$datatypeLabels = $smwgContLang->getDatatypeLabels();
@@ -130,7 +128,7 @@ class SIOPageSchemas extends PSExtensionHandler {
 
 		$jobs = array();
 		$jobParams = array();
-		$jobParams['user_id'] = $wgUser->getId();
+		$jobParams['user_id'] = RequestContext::getMain()->getUser()->getId();
 
 		$psTemplates = $pageSchemaObj->getTemplates();
 		foreach ( $psTemplates as $psTemplate ) {
