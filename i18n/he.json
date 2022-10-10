@@ -6,6 +6,8 @@
 			"YaronSh"
 		]
 	},
-	"semanticinternalobjects-desc": "הגדרות העצמים הפנימיים במדיה־ויקי הסמנטי",
-	"semanticinternalobjects-internalproperty": "מאפיין פנימי"
+	"semanticinternalobjects-desc": "הגדרות העצמים הפנימיים במדיה־ויקי הסמנטית",
+	"semanticinternalobjects-internalproperty": "מאפיין פנימי",
+	"semanticinternalobjects-mainpropertyname": "שם המאפיין לחיבור שדות התבנית הזאת לשאר הדף:",
+	"semanticinternalobjects-propnamewarning": "(יש להשתמש בזה רק אם לתבנית הזאת יכולים להיות כמה מופעים)"
 }
