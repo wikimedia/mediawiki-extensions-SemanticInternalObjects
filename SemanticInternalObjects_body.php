@@ -386,13 +386,14 @@ class SIOHandler {
 		$allText2Inserts = array();
 		$allCoordsInserts = array();
 		
+		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
 		foreach ( self::$mInternalObjects as $internalObject ) {
 			list( $upRels2, $upAtts2, $upText2, $upCoords ) = $sioSQLStore->getStorageSQL( $internalObject );
 			$allRels2Inserts = array_merge( $allRels2Inserts, $upRels2 );
 			$allAtts2Inserts = array_merge( $allAtts2Inserts, $upAtts2 );
 			$allText2Inserts = array_merge( $allText2Inserts, $upText2 );
 			$allCoordsInserts = array_merge( $allCoordsInserts, $upCoords );
-			Hooks::run( 'SIOHandler::updateData', array( $internalObject ) );
+			$hookContainer->run( 'SIOHandler::updateData', array( $internalObject ) );
 		}
 
 		// Now save everything to the database, in a single transaction.
