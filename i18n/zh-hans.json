@@ -9,6 +9,6 @@
 	},
 	"semanticinternalobjects-desc": "设置语义MediaWiki的内部对象",
 	"semanticinternalobjects-internalproperty": "内部属性",
-	"semanticinternalobjects-mainpropertyname": "连接此模板的字段与页面其余部分的属性名称：",
-	"semanticinternalobjects-propnamewarning": "（仅当此模板可以有多个实例时才应使用）"
+	"semanticinternalobjects-mainpropertyname": "连接该模板的字段与页面其余部分的属性名称：",
+	"semanticinternalobjects-propnamewarning": "（仅当该模板可以有多个实例时才应使用）"
 }
