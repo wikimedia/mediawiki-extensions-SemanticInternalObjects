@@ -63,9 +63,16 @@ $magicWords['nl'] = array(
 	'set_internal_recurring_event' => array( 0, 'intern_terugkerend_evenement_instellen' ),
 );
 
+/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
+$magicWords['sr-ec'] = array(
+	'set_internal' => array( 0, 'постави_унутрашње' ),
+	'set_internal_recurring_event' => array( 0, 'постави_унутрашњи_понављајући_догађај' ),
+);
+
 /** Serbian (Latin script) (srpski (latinica)‎) */
 $magicWords['sr-el'] = array(
 	'set_internal' => array( 0, 'postavi_unutrašnje' ),
+	'set_internal_recurring_event' => array( 0, 'postavi_unutrašnji_ponavljajući_događaj' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */
