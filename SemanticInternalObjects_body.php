@@ -79,7 +79,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 		}
 
 		// Now, do the deletion.
-		$db = wfGetDB( DB_MASTER );
+		$db = wfGetDB( DB_PRIMARY );
 		$idsString = '(' . implode ( ', ', $idsForDeletion ) . ')';
 		$db->delete( 'smw_rels2', array( "(s_id IN $idsString) OR (o_id IN $idsString)" ), 'SIO::deleteRels2Data' );
 		$db->delete( 'smw_atts2', array( "s_id IN $idsString" ), 'SIO::deleteAtts2Data' );
@@ -397,7 +397,7 @@ class SIOHandler {
 		}
 
 		// Now save everything to the database, in a single transaction.
-		$db = wfGetDB( DB_MASTER );
+		$db = wfGetDB( DB_PRIMARY );
 		$db->begin( 'SIO::updatePageData' );
 
 		if ( count( $allRels2Inserts ) > 0 ) {
