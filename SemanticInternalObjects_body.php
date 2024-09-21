@@ -66,7 +66,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 
 		// Get the set of IDs for internal objects to be deleted.
 		$iw = '';
-		$db = wfGetDB( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$idsForDeletion = $db->selectFieldValues(
 			'smw_ids',
 			'smw_id',
@@ -79,7 +79,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 		}
 
 		// Now, do the deletion.
-		$db = wfGetDB( DB_PRIMARY );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$idsString = '(' . implode ( ', ', $idsForDeletion ) . ')';
 		$db->delete( 'smw_rels2', array( "(s_id IN $idsString) OR (o_id IN $idsString)" ), 'SIO::deleteRels2Data' );
 		$db->delete( 'smw_atts2', array( "s_id IN $idsString" ), 'SIO::deleteAtts2Data' );
@@ -210,7 +210,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 		// Go through all SIOs for the current page, create RDF for
 		// each one, and add it to the general array.
 		$iw = '';
-		$db = wfGetDB( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $db->select(
 			'smw_ids',
 			array( 'smw_id', 'smw_namespace', 'smw_title' ),
@@ -397,7 +397,7 @@ class SIOHandler {
 		}
 
 		// Now save everything to the database, in a single transaction.
-		$db = wfGetDB( DB_PRIMARY );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$db->begin( 'SIO::updatePageData' );
 
 		if ( count( $allRels2Inserts ) > 0 ) {
@@ -430,7 +430,7 @@ class SIOHandler {
 		$newPageName = $new_title->getDBkey();
 		$newNamespace = $new_title->getNamespace();
 		$iw = '';
-		$db = wfGetDB( DB_REPLICA );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		// Unfortunately, there's no foolproof way to do the replacement
 		// with a single SQL call, using regexps and wildcards -
 		// instead, we first get the set of all matching entries in
