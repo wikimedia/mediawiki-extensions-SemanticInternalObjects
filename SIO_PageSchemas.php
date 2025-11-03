@@ -1,6 +1,8 @@
 <?php
 
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * Functions for handling Semantic Internal Objects data within the Page Schemas

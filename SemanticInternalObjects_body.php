@@ -240,6 +240,7 @@ class SIOSQLStore extends SMWSQLStore2 {
 		return true;
 	}
 }
+use MediaWiki\Title\Title;
 
 /**
  * Class for hook functions for creating and storing information
