@@ -3,11 +3,12 @@
 		"authors": [
 			"EugeneZelenko",
 			"Red Winged Duck",
-			"Zedlik"
+			"Zedlik",
+			"Ucukor"
 		]
 	},
 	"semanticinternalobjects-desc": "Налады ўнутраных аб’ектаў у Semantic MediaWiki",
 	"semanticinternalobjects-internalproperty": "Унутраная ўласьцівасьць",
 	"semanticinternalobjects-mainpropertyname": "Назва ўласьцівасьці для злучэньня палёў гэтага шаблёну з астатняй часткай старонкі:",
-	"semanticinternalobjects-propnamewarning": "(павінна выкарыстоўвацца, толькі калі гэты шаблён можа мець некалькі экзэмпляраў)"
+	"semanticinternalobjects-propnamewarning": "(павінна ўжывацца, толькі калі гэты шаблён можа мець мноства экзэмпляраў)"
 }
