@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Helix84"
+			"Helix84",
+			"Wizzard"
 		]
 	},
-	"semanticinternalobjects-desc": "Nastavenie vnútorných objektov v Semantic MediaWiki"
+	"semanticinternalobjects-desc": "Nastavenie vnútorných objektov v Semantic MediaWiki",
+	"semanticinternalobjects-internalproperty": "Interná vlastnosť",
+	"semanticinternalobjects-mainpropertyname": "Názov vlastnosti, ktorá spojí polia tejto šablóny so zvyškom stránky:",
+	"semanticinternalobjects-propnamewarning": "(malo by sa použiť len vtedy, ak môže mať táto šablóna viacero výskytov)"
 }
